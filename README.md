@@ -11,7 +11,7 @@ We want you to use whatever coding environment you are most comfortable with, so
 ## Scenario
 
 Your company aims to simplify cloud infrastructure provisioning by developing a CLI tool. The tool should automate the
-creation and delete S3 resources using Terraform.
+creation and deletion S3 resources using Terraform.
 
 ## Prerequisites
 
@@ -44,9 +44,9 @@ The CLI should support the following commands:
 
 ```yaml
 minio:
-server: 127.0.0.1:9000
-user: developer
-password: strong_password
+  server: 127.0.0.1:9000
+  user: developer
+  password: strong_password
 
 bucket_name: platform-interview
 file_content: Lorem ipsum odor amet, consectetuer adipiscing elit.
