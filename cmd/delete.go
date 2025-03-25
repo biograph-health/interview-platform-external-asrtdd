@@ -1,13 +1,13 @@
 package cmd
 
 import (
-	"fmt"
+	"errors"
+
 	"github.com/spf13/cobra"
 )
 
 type deleteCmd struct {
-	cmd    *cobra.Command
-	config string
+	cmd *cobra.Command
 }
 
 func newDeleteCmd() *deleteCmd {
@@ -15,17 +15,12 @@ func newDeleteCmd() *deleteCmd {
 
 	cmd := &cobra.Command{
 		Use:   "delete",
-		Short: "Delete infrastructure",
+		Short: "Destroy provisioned infrastructure",
 		RunE: func(cmd *cobra.Command, args []string) error {
 			// TODO: implement delete functionality
-			fmt.Println("delete not implemented")
-
-			return nil
+			return errors.New("not implemented")
 		},
 	}
-
-	cmd.Flags().StringVarP(&root.config, "config", "f", "config.yaml", "Load configuration from file")
-	_ = cmd.MarkFlagFilename("config", "yaml", "yml")
 
 	root.cmd = cmd
 	return root

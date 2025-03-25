@@ -1,13 +1,13 @@
 package cmd
 
 import (
-	"fmt"
+	"errors"
+	
 	"github.com/spf13/cobra"
 )
 
 type createCmd struct {
-	cmd    *cobra.Command
-	config string
+	cmd *cobra.Command
 }
 
 func newCreateCmd() *createCmd {
@@ -15,17 +15,12 @@ func newCreateCmd() *createCmd {
 
 	cmd := &cobra.Command{
 		Use:   "create",
-		Short: "Create infrastructure",
+		Short: "Provision infrastructure based on configuration",
 		RunE: func(cmd *cobra.Command, args []string) error {
 			// TODO: implement create functionality
-			fmt.Println("create not implemented")
-
-			return nil
+			return errors.New("not implemented")
 		},
 	}
-
-	cmd.Flags().StringVarP(&root.config, "config", "f", "config.yaml", "Load configuration from file")
-	_ = cmd.MarkFlagFilename("config", "yaml", "yml")
 
 	root.cmd = cmd
 	return root
